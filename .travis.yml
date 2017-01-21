@@ -1,0 +1,16 @@
+language: node_js
+env:
+  global:
+  - GH_USER: nelson
+node_js:
+- '0.12'
+install:
+- npm install gulp bower -g 
+- npm install
+deploy:
+  provider: codedeploy
+  access_key_id: $KEY #'YOUR AWS ACCESS KEY'
+  secret_access_key:
+    secure: $SECRET #'YOUR ENCRYPT AWS SECRET KEY'
+  application: bot
+  deployment_group: saru
